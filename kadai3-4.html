@@ -23,7 +23,7 @@
                 console.log("商品は以下の" + items.length + "種類です。");
                 // 配列の内容を項目毎に出力
                 for (const item of items) {
-                    console.log(`商品番号: ${item.id}, 商品名: ${item.name}, 金額: ${item.price}, 在庫数: ${item.stock}`);
+                    console.log(`商品番号: ${item.id}, 商品名: ${item.name}, 金額: ${item.price}円, 在庫数: ${item.stock}`);
                 }
                 console.log(""); // 空行の出力
             }
@@ -36,11 +36,12 @@
                 }
 
                 const item = items[no - 1]; // 商品番号は1から始まるため、インデックスを調整
+                console.log(`商品番号: ${item.id}, 商品名: ${item.name}`);
+
                 if (item.stock > 0) {
-                    console.log(`商品番号: ${item.id}, 商品名: ${item.name}を購入します。`);
                     item.stock--; // 在庫を減らす
                 } else {
-                    console.log(`在庫がありません。`);
+                    console.log(`在庫がありません。商品名: ${item.name}`);
                 }
 
                 showItemList(); // 商品一覧の表示関数呼び出し
@@ -50,6 +51,7 @@
             buyItem(3); // 商品購入の関数呼び出し
             buyItem(5); // 商品購入の関数呼び出し
             buyItem(5); // 商品購入の関数呼び出し
+            buyItem(9); // 無効な商品番号の確認
         </script>
     </body>
 </html>
