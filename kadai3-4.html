@@ -30,6 +30,7 @@
 
             // 商品購入の関数
             function buyItem(no) {
+                // 商品番号の範囲チェック
                 if (no < 1 || no > items.length) {
                     console.log(`${no}は無効な商品番号です。番号は1～${items.length}で指定してください。`);
                     return;
@@ -38,8 +39,10 @@
                 const item = items[no - 1]; // 商品番号は1から始まるため、インデックスを調整
                 console.log(`商品番号: ${item.id}, 商品名: ${item.name}`);
 
+                // 在庫の確認
                 if (item.stock > 0) {
                     item.stock--; // 在庫を減らす
+                    console.log(`購入しました: ${item.name} (${item.price}円)`);
                 } else {
                     console.log(`在庫がありません。商品名: ${item.name}`);
                 }
@@ -47,6 +50,7 @@
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
+            // 初期表示
             showItemList(); // 商品一覧の表示関数呼び出し
             buyItem(3); // 商品購入の関数呼び出し
             buyItem(5); // 商品購入の関数呼び出し
