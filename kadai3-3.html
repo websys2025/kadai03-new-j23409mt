@@ -13,18 +13,11 @@
             members["J002"] = "設計士郎";
 
             // 一覧を表示する処理
+            let output = []; // 出力用の配列
             for (const key in members) {
-                console.log(`${key}: ${members[key]}`); // キーと値を表示
+                output.push(`${key}: ${members[key]}`); // キーと値を配列に追加
             }
+            console.log(output.join(' … ')); // 配列を連結して表示
         </script>
     </body>
 </html>
-
-<!--
-期待される出力例
-----------------
-A001: 山田太郎
-A002: 井上花子
-J001: 情報次郎
-J002: 設計士郎
--->
